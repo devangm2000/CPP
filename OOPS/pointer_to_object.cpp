@@ -16,11 +16,16 @@ public:
 };
 int main()
 {
-    Rectangle r;
+    // Creating an object
+    // Rectangle r;
+    // Rectangle *ptr;
+    // ptr = &r;
+
+    // Without creating an initial object
     Rectangle *ptr;
-    ptr = &r;
-    //r.length = 10;
-    ptr->length = 10;
+    ptr = new Rectangle;
+
+    ptr->length = 10; //r.length = 10;
     ptr->breadth = 5;
-    cout << r.perimeter() << " " << r.area() << endl;
+    cout << ptr->perimeter() << " " << ptr->area() << endl;
 }
