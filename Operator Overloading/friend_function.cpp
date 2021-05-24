@@ -23,6 +23,8 @@ public:
     }
 };
 Complex operator+(Complex c1, Complex c2) //defined diff than normal functions
+//i.e not like a member function
+//friend functions are global functions hence can access private members also
 {
     Complex t;
     t.real = c1.real + c2.real;
