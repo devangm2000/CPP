@@ -12,13 +12,7 @@ public:
         this->real = real;
         this->imaginary = imaginary;
     }
-    Complex operator+(Complex c)
-    {
-        Complex t;
-        t.real = real + c.real;
-        t.imaginary = imaginary + c.imaginary;
-        return t;
-    }
+    friend Complex operator+(Complex c1, Complex c2); //define friend function outside class always
     int getReal()
     {
         return real;
@@ -28,12 +22,19 @@ public:
         return imaginary;
     }
 };
+Complex operator+(Complex c1, Complex c2) //defined diff than normal functions
+{
+    Complex t;
+    t.real = c1.real + c2.real;
+    t.imaginary = c1.imaginary + c2.imaginary;
+    return t;
+}
 int main()
 {
-    Complex c1(3, 4);
-    Complex c2(0, 2);
-    Complex c3 = c1 + c2; //directly use the operator=>no need for function name
-    //c2 is the parameter here
-    //same for -* etc
+    Complex c1(1, 2);
+    Complex c2(0, 1);
+    Complex c3;
+    c3 = c1 + c2;
     cout << c3.getReal() << " " << c3.getImag();
+    return 0;
 }
