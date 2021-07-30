@@ -13,7 +13,7 @@ int main()
 
     // find:for finding occurenceos string/char inside another string
     string s = "How are you";
-    cout << s.find("are") << endl;
+    cout << s.find("abc") << endl;
     cout << s.find("o") << endl;
     // rfind(): seaarches from right but gives index from left only
     cout << s.rfind("o") << endl;
